@@ -1,9 +1,5 @@
 
 
-<p align="center">
-  <img alt="Proffy" title="Proffy" src="logo.png" />
-</p>
-
 <h3 align="center">
   Api RESTFull com Django Framework.
 </h3>
@@ -38,8 +34,8 @@ $ Clonar o repositório: https://github.com/elisandrade21/djangoAPI.git
 $ python3 - m venv venv
 ativando o venv:
 $ source venv/bin/activate (linux)
-$ venv\Scripts\Activate.ps1 (powershell)
-$ venv\Scripts\Activate.bat (cmd)
+$ venv/Scripts/Activate.ps1 (powershell)
+$ venv/Scripts/Activate.bat (cmd)
  Instalar todos os módulos necessários:
 $ pip install -r requirements.txt
 
