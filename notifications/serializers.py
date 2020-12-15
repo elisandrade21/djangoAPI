@@ -1,11 +1,12 @@
 from rest_framework import serializers
-from .models import Notification
+from rest_enumfield import EnumField
+from .models import Notification, comunication_type,send_status 
 
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification
-        fields = ['id','send_data','comunication_type', 'send_status','title','body']     
-        extra_kwargs = {
-            'name_receiver' : {'write_only': True},
-            'receiver' : {'write_only': True}
-        }
+        fields = ('__all__')
+
+    
+    send_status = EnumField(choices=send_status, to_choice=lambda x: (x.value, x.name), to_repr=lambda x: x.value)
+    comunication_type = EnumField(choices=comunication_type, to_choice=lambda x: (x.value, x.name), to_repr=lambda x: x.value)
