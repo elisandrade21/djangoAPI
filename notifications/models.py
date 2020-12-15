@@ -25,8 +25,12 @@ class Notification(models.Model):
     receiver = models.CharField(max_length=150) # receiver vai ser número do telefone ou e-mail 
     name_receiver = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name = 'Notification'
+        verbose_name_plural = 'Notifications'
+
 
     def __str__(self):
-        return self.name_receiver
+        return self.title
 
    
