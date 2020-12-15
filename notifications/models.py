@@ -1,5 +1,6 @@
 from django.db import models
 from enum import Enum
+import json
 from django_enum_choices.fields import EnumChoiceField
 
 
@@ -9,10 +10,16 @@ class comunication_type(Enum):
     PUSH = 'Push'
     WHATSAPP = 'Whatsapp'
 
+    def __json__(self):
+        return self.value
+
 class send_status(Enum):
     SENT = 'Sent'
     ERROR = 'Error'
     WAITING = 'Waiting'
+
+    def __json__(self):
+        return self.value
 
 
 class Notification(models.Model):

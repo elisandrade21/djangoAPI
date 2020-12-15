@@ -12,3 +12,9 @@ class NotificationAPIView(APIView):
         serializer = NotificationSerializer(notifications, many = True)
         return Response(serializer.data)
 
+    def post(self,request):
+        serializer = NotificationSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data,status=status.HTTP_201_CREATED)
+
