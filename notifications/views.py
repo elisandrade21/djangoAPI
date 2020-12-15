@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status
 from rest_framework.response import Response
 
 
@@ -10,7 +11,7 @@ class NotificationAPIView(APIView):
     def get(self, request):
         notifications = Notification.objects.all()
         serializer = NotificationSerializer(notifications, many = True)
-        return Response(serializer.data)
+        return Response(serializer.data,status=status.HTTP_200_CREATED)
 
     def post(self,request):
         serializer = NotificationSerializer(data=request.data)
