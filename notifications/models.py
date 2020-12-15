@@ -10,17 +10,10 @@ class comunication_type(Enum):
     PUSH = 'Push'
     WHATSAPP = 'Whatsapp'
 
-    def __json__(self):
-        return self.value
-
 class send_status(Enum):
     SENT = 'Sent'
     ERROR = 'Error'
     WAITING = 'Waiting'
-
-    def __json__(self):
-        return self.value
-
 
 class Notification(models.Model):
     id = models.AutoField(primary_key=True)
@@ -32,8 +25,10 @@ class Notification(models.Model):
     receiver = models.CharField(max_length=150) # receiver vai ser número do telefone ou e-mail 
     name_receiver = models.CharField(max_length=100)
 
+    objects = models.Manager()
+
+
     class Meta:
-        verbose_name = 'Notification'
         verbose_name_plural = 'Notifications'
 
 
