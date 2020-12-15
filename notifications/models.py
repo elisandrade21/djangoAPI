@@ -1,27 +1,31 @@
 from django.db import models
+from enum import Enum
+from django_enum_choices.fields import EnumChoiceField
 
-class Messages(models.Model):
-    id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=100)
-    body = models.TextField()
-    name_receiver = models.CharField(max_length=150)
-    receiver = models.CharField(max_length=150)
 
-    def __str__(self):
-        return self.title
+class comunication_type(Enum):
+    EMAIL = 'Email'
+    SMS = 'Sms'
+    PUSH = 'Push'
+    WHATSAPP = 'Whatsapp'
 
-    class Meta:
-        verbose_name_plural = "Messages"
+class send_status(Enum):
+    SENT = 'Sent'
+    ERROR = 'Error'
+    WAITING = 'Waiting'
+
 
 class Notifications(models.Model):
     id = models.AutoField(primary_key=True)
     send_data = models.DateTimeField()
-    notification_type = models.CharField(max_length=50)
-    send_status = models.BooleanField(default=False)
-    id_message = models.ForeignKey(Messages, on_delete=models.CASCADE)
+    comunication_type = EnumChoiceField(comunication_type)
+    send_status = EnumChoiceField(send_status)
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    receiver = models.CharField(max_length=150)
 
     def __str__(self):
-        return  self.notification_type
+        return self.title 
 
     class Meta:
         verbose_name_plural = "Notifications"
