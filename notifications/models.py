@@ -15,7 +15,7 @@ class send_status(Enum):
     WAITING = 'Waiting'
 
 
-class Notifications(models.Model):
+class Notification(models.Model):
     id = models.AutoField(primary_key=True)
     send_data = models.DateTimeField()
     comunication_type = EnumChoiceField(comunication_type)
@@ -27,5 +27,4 @@ class Notifications(models.Model):
     def __str__(self):
         return self.title 
 
-    class Meta:
-        verbose_name_plural = "Notifications"
+   
