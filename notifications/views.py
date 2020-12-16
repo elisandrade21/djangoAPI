@@ -5,18 +5,15 @@ from rest_framework.response import Response
 from django.http import Http404
 
 
-from .models import Notification as NoticationModel
+
+from .models import Notification as NoticationModel, send_status
 from .serializers import NotificationSerializer
 
 class NotificationAPIView(APIView):
-    def get_object(self,pk):
-        try:
-            return NoticationModel.objects.get(id=pk)
-        except NoticationModel.DoesNotExist:
-            raise Http404
 
-    def get(self, request, pk):
+    def get(self, request):
         notifications = NoticationModel.objects.all()
+        #notifications = NoticationModel.objects.filter(send_status=send_status.ERROR)
         serializer = NotificationSerializer(notifications, many = True)
         return Response(serializer.data,status=status.HTTP_201_CREATED)
 
