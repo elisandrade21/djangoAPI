@@ -10,3 +10,9 @@ class NotificationSerializer(serializers.ModelSerializer):
     
     send_status = EnumField(choices=send_status, to_choice=lambda x: (x.value, x.name), to_repr=lambda x: x.value)
     comunication_type = EnumField(choices=comunication_type, to_choice=lambda x: (x.value, x.name), to_repr=lambda x: x.value)
+
+
+    
+   
+
+
