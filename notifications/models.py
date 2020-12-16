@@ -22,7 +22,7 @@ class Notification(models.Model):
     send_status = EnumChoiceField(send_status)
     title = models.CharField(max_length=100)
     body = models.TextField()
-    receiver = models.CharField(max_length=150) # receiver vai ser número do telefone ou e-mail 
+    receiver = models.CharField(max_length=150) # receiver will be phone number or email
     name_receiver = models.CharField(max_length=100)
 
     objects = models.Manager()
