@@ -5,7 +5,7 @@ url_notification = ('http://localhost:8000/api/v1/notifications/')
 # Testando o método POST 
 # Notification 1 
 new_notification1 = {
-  "send_status": "Sent",
+  "send_status": "Waiting",
   "comunication_type": "Sms",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Efetuado",
@@ -22,7 +22,7 @@ print(result.status_code)
 # Testando o método POST 
 # Notification 2
 new_notification2 = {
-  "send_status": "Error",
+  "send_status": "Waiting",
   "comunication_type": "Email",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Não Foi Efetuado",
@@ -39,7 +39,7 @@ print(result2.status_code)
 # Testando o método POST 
 # Notification 3
 new_notification3 = {
-  "send_status": "Sent",
+  "send_status": "Waiting",
   "comunication_type": "Email",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Não Foi Efetuado",
@@ -56,7 +56,7 @@ print(result3.status_code)
 # Testando o método POST 
 # Notification 4
 new_notification4 = {
-  "send_status": "Error",
+  "send_status": "Waiting",
   "comunication_type": "Email",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Não Foi Efetuado",
@@ -92,7 +92,7 @@ print(result5.status_code)
 # Testando o método POST 
 # Notification 6
 new_notification6 = {
-  "send_status": "Error",
+  "send_status": "Waiting",
   "comunication_type": "Email",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Não Foi Efetuado",
@@ -109,7 +109,7 @@ print(result6.status_code)
 # Testando o método POST 
 # Notification 7
 new_notification7 = {
-  "send_status": "Error",
+  "send_status": "Waiting",
   "comunication_type": "Email",
   "send_data": "2020-12-15T15:10:02-03:00",
   "title": "Pagamento Não Foi Efetuado",
