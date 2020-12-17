@@ -1,7 +1,7 @@
 import requests
 
 url_notification = ('http://localhost:8000/api/v1/notifications/')
-"""
+
 # Testando o método POST 
 # Notification 1 
 new_notification1 = {
@@ -19,7 +19,6 @@ result = requests.post(url=url_notification,data=new_notification1)
 assert result.status_code == 201
 print(result.status_code)
 
-"""
 # Testando o método POST 
 # Notification 2
 new_notification2 = {
