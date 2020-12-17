@@ -56,8 +56,13 @@ $ python manage.py migrate
 $ python manage.py createsuperuser --email admin@example.com --username admin
 13. Executando o projeto  
 $ python manage.py runserver
-14. Consumindo a API RESTful 
-
+14. Consumindo a API RESTful: para realizar os testes implementados o servidor precisa está em execução e assim ao mesmo mesmo tempo
+execute o arquivo com os testes. Os arquivos com testes de requisaões para api são:
+$teste_requests
+$teste_get
+$teste_post
+$teste_put
+$teste_delete
 ```
 
 
