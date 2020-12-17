@@ -15,6 +15,7 @@ class send_status(Enum):
     ERROR = 'Error'
     WAITING = 'Waiting'
 
+
 class Notification(models.Model):
     id = models.AutoField(primary_key=True)
     send_data = models.DateTimeField()
