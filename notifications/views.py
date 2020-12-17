@@ -29,7 +29,6 @@ class NotificationAPIView(APIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        print('entre')
         notification = self.get_object(pk)
         serializer = NotificationSerializer(notification)
         return Response(serializer.data)    
