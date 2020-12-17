@@ -21,6 +21,7 @@ def get_notifications_by_status(request, status):
 
         return HttpResponse(data, content_type='application/json; utf-8')
 
+
 class NotificationAPIView(APIView):
     def get_object(self, pk):
         try:
