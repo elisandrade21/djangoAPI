@@ -37,7 +37,7 @@ $ git clone https://github.com/elisandrade21/djangoAPI.git
 3. Criar uma tabela no banco de dados PostreSQL 
 4. Criar um arquivo chamado .env no diretório do projeto.
 5. Copiar o conteúdo do arquivo .env.example para o .env
-6. Atribuir os valores das variáveis de ambientes para respecitvos valores do arquivo .env a SECRET_KEY e as credenciais do banco de dados configuradas anteriormente.   
+6. Atribuir os valores das variáveis de ambientes para respecitvos valores do arquivo .env a SECRET_KEY, DEBUG e as credenciais do banco de dados configuradas anteriormente.   
 7. Instalar a virtual env: 
 $ pip3 install virtualenv
 8. Criar o ambiente virtual:
@@ -56,7 +56,7 @@ $ python manage.py migrate
 $ python manage.py createsuperuser --email admin@example.com --username admin
 13. Executando o projeto  
 $ python manage.py runserver
-15. Consumindo a API RESTful 
+14. Consumindo a API RESTful 
 
 ```
 
