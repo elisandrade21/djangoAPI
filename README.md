@@ -30,19 +30,24 @@ Para instalação é necessário ter o python instalado na máquina.
 
 #### :wrench: Api Django 
  ``` bash
-$ Clonar o repositório: https://github.com/elisandrade21/djangoAPI.git
+- Clonar o repositório: 
+$ git clone https://github.com/elisandrade21/djangoAPI.git
+- Instalar a virtual env: 
+$ pip3 install virtualenv
+- Criar o ambiente virtual:
 $ python3 - m venv venv
 ativando o venv:
 $ source venv/bin/activate (linux)
-$ venv/Scripts/Activate.ps1 (powershell)
-$ venv/Scripts/Activate.bat (cmd)
- Instalar todos os módulos necessários:
+$ venv\Scripts\Activate.ps1 (powershell)
+$ .\venv\Scripts\activate (cmd)
+- Instalar todos os módulos necessários:
 $ pip install -r requirements.txt
-
+- Copiar o conteúdo do arquivo settings.example.py e criar um arquivo chamado settings.py na pasta aplicacao com o conteúdo copiado
+- Para gerar a secret key rode o comando:
+$ python -c "import secrets;print(secrets.token_urlsafe())"
+$ Copiar a secret key gerada e atualize em SECRET_KEY (dentro das aspas simples) no arquivo settings.py
+- Criar uma tabela no banco de dados PostreSQL
 ```
-
-## 💻 API Endpoints
-
 
 
 # :postbox: Contato
